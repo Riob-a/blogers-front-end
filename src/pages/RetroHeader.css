@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;700&display=swap');
+
+.retro-header {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust based on your layout */
+  text-align: center;
+  background-color: #f8e8e4; /* Light pastel background */
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.text-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.retro-title {
+  font-size: 90px;
+  font-weight: bold;
+  text-transform: lowercase;
+  line-height: 0.9;
+  font-family: 'Archivo Black', sans-serif;
+  color: #1e1e1e;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.poster-no {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-transform: uppercase;
+}

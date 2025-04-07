@@ -1,0 +1,92 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-weight: bold;
+  color:#fbfbc4;
+  /* color:#b4ef7c; */
+  background-color: #1a1a1b;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
+.content {
+  flex-grow: 1; /* Pushes the footer down */
+}
+
+ body{
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-weight: bold;
+  color:#fbfbc4;
+  /* color:#b4ef7c; */
+  background-color: #1a1a1b;
+
+ }
+
+
+/* transpareent frosted card */
+/* .card{
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  color: white;
+  button{
+    background: rgba(255, 255, 255, 0.15);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover{
+      background: rgba(249, 208, 74, 0.3);
+    }
+  }
+} */
+.card{
+  background: #21252946;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #fbfbc452; 
+  color: #fbfbc4;
+}
+.all-button{
+    background: #fbfbc4;
+    color: #212529;
+    border: 1px solid #fbfbc452;
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover{
+      background: #b6b60756;
+      border-color: #fbfbc452;
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+}
+
+
+
+
+
+
+
+

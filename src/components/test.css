@@ -1,0 +1,111 @@
+/* Logo */
+.logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: bold;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Initially collapsed */
+    max-width: 90%;
+    z-index: 10;
+    border: none !important;
+    border-radius: 30px;
+    margin: 5px auto;
+    padding: 10px 20px;
+    
+    background-color: #ffffe327 !important;
+    backdrop-filter: blur(10px);
+    color: #ffffe3 !important;
+    transition: width 0.5s ease-in-out, background-color 0.3s, color 0.3s;
+  }
+  
+  /* Expanded Navbar */
+  .navbar-expanded {
+    width: 700px; /* Expands smoothly */
+    height: auto;
+  }
+  
+  /* Collapsible Navbar Content */
+  .collapse {
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.1s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  .collapse.show {
+    visibility: visible;
+    opacity: 1;
+    max-height: 700px;
+    overflow: visible;
+  }
+
+  .navbar-collapse {
+    padding-left: 20px;
+  }
+  
+  /* Navbar Brand and Links */
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+    color: #ffffe3 !important;
+  }
+
+  
+  .navbar .nav-link:hover {
+    color: #b6b607 !important;
+    transform: scale(1.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Navbar Toggler */
+  .navbar-toggler {
+    border-color: #ffffe3;
+    background-color: #ffffe3;
+  }
+  
+  .custom-collapse-icon,
+  .navbar-toggler-icon {
+    background-color: #ffffe3;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Dropdown */
+  .custom-dropdown {
+    cursor: pointer;
+  }
+  
+  .custom-dropdown-item {
+    color: #ffffe3;
+  }
+  
+  .dropdown-menu {
+    background-color: #ffffe33a;
+    color: #ffffe3;
+    border: #ffffff;
+    transition: max-height 0.5s ease-in-out;
+    z-index: 1000; /* Ensure dropdown is on top */
+  }
+  
+  .dropdown-item {
+    color: #ffffe3;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dropdown-item:hover {
+    color: #b6b607;
+    background-color: #ffffe33a;
+    border-radius: 5px;
+    transform: scale(1.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  }
+  

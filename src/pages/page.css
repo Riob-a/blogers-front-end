@@ -1,0 +1,484 @@
+/* HomePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Lilita+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rowdies:wght@300;400;700&family=Spicy+Rice&family=Unbounded:wght@200..900&display=swap');
+
+/* fonts */
+
+h1 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  color: #b6b607;
+}
+
+h2 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #b6b607;
+}
+
+h3 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h5 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h6 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+.unbounded-uniquifier-p2 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+}
+
+.list-group-item {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+.card-link {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+.button {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.list {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+.navbar {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.blog-header {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* header */
+
+#home {
+  /* background: linear-gradient(45deg, #a5d8f1, #085982, #0b426b ); */
+  /* border-color: #fbfbc4;
+  border-width: 1px;
+  border-style: solid; */
+  background-color: #1a1a1b;
+  animation: gradientWave 15s ease infinite;
+  transition: background-color 0.3s, color 0.3s;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 600px;
+  width: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 2px;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* Allows positioning of child elements */
+  padding-top: 100px;
+}
+
+
+#home h1 {
+  padding-top: 150px;
+  color: #fbfbc4;
+  display: block;
+  width: auto;
+  font-family: 'Archivo Black', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: bold;
+  margin: 0;
+  position: relative;
+  font-size: clamp(4.5rem, 5vw, 3rem)
+}
+
+#home p {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* theme button */
+.floating-theme-button {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+#i {
+  color: #b6b607;
+}
+
+.floating-theme-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  &:hover {
+    /* background: #b6b60756; */
+    transform: scale(1.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s ease-in-out;
+  }
+}
+
+.about-card {
+  /* overflow: hidden; */
+  height: 50%;
+  margin: auto;
+  position: relative;
+  
+  .card-title{
+    margin-top: 2.5%;
+  }
+}
+
+.about-card.expanded {
+  transition: height 0.8s ease-in-out 0.3s, width 0.5s ease-in-out 0.3s;
+  height: 100%;
+  width: 100%;
+
+  #disappear {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    transition: opacity 0.5s ease-in-out 1s, visibility 0s linear 1s; 
+  }
+  #disappear2 {
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+
+.about-card.collapsed {
+  transition:
+    height 0.6s ease-in-out 0.2s,
+    width 0.4s ease-in-out 0.2s,
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
+  height: 50%;
+  width: 50%;
+
+  #disappear {
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+  }
+  #disappear2 {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    transition: opacity 0.5s ease-in-out 1s, visibility 0s linear 1s;
+  }
+}
+/* Centering the button vertically */
+.about-card .lrn-button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers both horizontally and vertically */
+  z-index: 0; /* Ensure it stays on top */
+}
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.Em-btn {
+  background: #fbfbc4;
+  color: #212529;
+  border: 1px solid #ffffff4d;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #b6b60756;
+  }
+
+}
+/* About page */
+.about  .strong{
+  color: #b6b607;
+
+}
+.about{
+  h1{
+    color:#b6b607
+  }
+  h2{
+    color:#b6b607
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.a{
+  color:#fbfbc4;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.a:hover{
+  color: #b6b607;
+  transform: scale(1.1);
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.about-logo{
+  padding-top: 150px;
+  color: #fbfbc4;
+  display: block;
+  width: auto;
+  font-family: 'Archivo Black', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: bold;
+  margin: 0;
+  position: relative;
+  font-size: clamp(4.5rem, 5vw, 3rem);
+  cursor: pointer;
+}
+.about-p{
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal; 
+}
+
+/* Blog details */
+/* the maximze and minimize button on the comment section in the blog*/
+.post-b {
+  background: #fbfbc4;
+  color: #212529;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #b6b60756;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+}
+
+/* for the comment text-area on blogs */
+.date {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+.comment-box {
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: #1a1a1b;
+  height: 0px;
+  /* Default collapsed state */
+}
+
+.comment-box.expanded {
+  height: 150px;
+  /* Expanded height */
+}
+
+.comment-box.collapsed {
+  height: 0px;
+}
+
+.comment-max {
+  background: #fbfbc4;
+  color: #212529;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #b6b60756;
+  }
+}
+
+/* Blog page */
+.blog-page {
+  height: auto;
+  width: auto;
+  /* margin-top: 20px; */
+  padding: 20px;
+}
+
+.blog-card {
+  height: 100%;
+  /* margin:auto */
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #21252946;
+  border: 2px solid #b6b607;
+  color: #b6b607;
+}
+
+#dropdown-basic {
+  background: #fbfbc4;
+  color: #212529;
+  border: 1px solid #ffffff4d;
+  border-radius: 12px;
+  padding: 5px 10px;
+  /* padding: 10px; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #b6b60756;
+  }
+}
+.like-button{
+  background-color: transparent !important;
+  color: #fbfbc4;
+  border-radius: 50px;
+  border-color: transparent !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover{
+    color: #b6b60756;
+  }
+}
+.drop-menu {
+  background-color: #ffffe357;
+  backdrop-filter: blur(10px);
+  color: #fbfbc4fe;
+  border: #ffffff;
+  transition: max-height 0.5s ease-in-out;
+  z-index: 1000;
+   
+  .drop-item{
+    padding: 10px;
+    transition: all 0.3s ease;
+    &:hover{
+      background: #b6b60756;
+      /* background:#fbfbc46d ; */
+    }
+  }
+}
+
+/* Create post */
+.create-post {
+  height: auto;
+  width: auto;
+
+}
+
+/* Dashboard */
+.dashboard {
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  padding: 20px;
+
+  .card {
+    width: auto;
+    height: 400px;
+  }
+}
+
+/* Profile */
+.edit-form-container {
+  /* background-color: #1a1a1b; */
+  max-height: 0%;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+  padding: 0px;
+}
+.edit-form-container.collapsed{
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  height:0%
+}
+.edit-form-container.expanded {
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  max-height: 100%;
+  padding: 20px;
+}
+/* hero section */
