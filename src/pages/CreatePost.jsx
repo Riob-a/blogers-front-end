@@ -13,18 +13,18 @@ const CreatePost = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
-  const { quill, quillRef } = useQuill({
-    theme: 'snow',
-    modules: {
-      toolbar: [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ header: [1, 2, 3, false] }],
-        [{ list: 'ordered' }, { list: 'bullet' }],
-        ['link', 'image'],
-        ['clean'],
-      ],
-    },
-  });
+  // const { quill, quillRef } = useQuill({
+  //   theme: 'snow',
+  //   modules: {
+  //     toolbar: [
+  //       ['bold', 'italic', 'underline', 'strike'],
+  //       [{ header: [1, 2, 3, false] }],
+  //       [{ list: 'ordered' }, { list: 'bullet' }],
+  //       ['link', 'image'],
+  //       ['clean'],
+  //     ],
+  //   },
+  // });
 
   useEffect(() => {
     AOS.init({
@@ -34,13 +34,13 @@ const CreatePost = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (quill) {
-      quill.on('text-change', () => {
-        setContent(quill.root.innerHTML);
-      });
-    }
-  }, [quill]);
+  // useEffect(() => {
+  //   if (quill) {
+  //     quill.on('text-change', () => {
+  //       setContent(quill.root.innerHTML);
+  //     });
+  //   }
+  // }, [quill]);
 
   const handleAddGenre = () => {
     if (genreInput.trim() && !genres.includes(genreInput.trim())) {
@@ -83,7 +83,7 @@ const CreatePost = () => {
       setSuccessMessage('Post created successfully!');
       setTitle('');
       setGenres([]); // Clear genres
-      if (quill) quill.setContents([]); // Clear Quill editor
+      setContent('');
     } catch (err) {
       setError(err.message);
     }
