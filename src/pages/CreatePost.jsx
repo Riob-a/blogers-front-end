@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Card, Container, Alert } from 'react-bootstrap';
-import { useQuill } from 'react-quilljs';
-import 'quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -109,7 +109,12 @@ const CreatePost = () => {
 
           <Form.Group className="mb-3">
             <Form.Label className="p-1">Post Content</Form.Label>
-            <div ref={quillRef} style={{ height: '200px', marginBottom: '20px' }} />
+            <ReactQuill
+              theme="snow"
+              value={content}
+              onChange={setContent}
+              style={{ height: '200px', marginBottom: '20px' }}
+            />
           </Form.Group>
 
           {/* Genre Input */}
@@ -122,7 +127,7 @@ const CreatePost = () => {
                 value={genreInput}
                 onChange={(e) => setGenreInput(e.target.value)}
               />
-              <Button  className="ms-2 all-button" onClick={handleAddGenre}>
+              <Button className="ms-2 all-button" onClick={handleAddGenre}>
                 Add
               </Button>
             </div>
