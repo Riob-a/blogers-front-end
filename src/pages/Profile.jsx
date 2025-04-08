@@ -57,7 +57,7 @@ const Profile = () => {
                 setPosts(postsResponse.data); // Assuming response contains an array of posts
             } catch (err) {
                 if (err.response?.status === 401) {
-                    setError("Session expired. Redirecting to login...");
+                    // setError("Session expired. Redirecting to login...");
                     localStorage.removeItem("access_token");
                     toast.error("Session expired. Please log in again.");
                     setTimeout(() => navigate("/"), 1500);

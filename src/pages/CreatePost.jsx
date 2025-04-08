@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./page.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -13,18 +14,7 @@ const CreatePost = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
-  // const { quill, quillRef } = useQuill({
-  //   theme: 'snow',
-  //   modules: {
-  //     toolbar: [
-  //       ['bold', 'italic', 'underline', 'strike'],
-  //       [{ header: [1, 2, 3, false] }],
-  //       [{ list: 'ordered' }, { list: 'bullet' }],
-  //       ['link', 'image'],
-  //       ['clean'],
-  //     ],
-  //   },
-  // });
+ 
 
   useEffect(() => {
     AOS.init({
@@ -34,13 +24,22 @@ const CreatePost = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (quill) {
-  //     quill.on('text-change', () => {
-  //       setContent(quill.root.innerHTML);
-  //     });
-  //   }
-  // }, [quill]);
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],     // Headers
+    [{ font: [] }],                             // Font options
+    [{ size: ['small', false, 'large', 'huge'] }], // Font size
+    ['bold', 'italic', 'underline', 'strike'],  // Basic formatting
+    [{ color: [] }, { background: [] }],        // Font color and background
+    [{ script: 'sub' }, { script: 'super' }],   // Subscript/superscript
+    [{ list: 'ordered' }, { list: 'bullet' }],  // Lists
+    [{ indent: '-1' }, { indent: '+1' }],       // Indentation
+    [{ align: [] }],                            // Text alignment
+    ['blockquote', 'code-block'],               // Blockquote & code
+    ['link', 'image', 'video'],                 // Media
+    ['clean'] 
+    ]
+  };
 
   const handleAddGenre = () => {
     if (genreInput.trim() && !genres.includes(genreInput.trim())) {
@@ -108,18 +107,20 @@ const CreatePost = () => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label className="p-1">Post Content</Form.Label>
+            <Form.Label className="p-3">Post Content</Form.Label>
             <ReactQuill
+            className='quill-editor'
               theme="snow"
               value={content}
               onChange={setContent}
-              style={{ height: '200px', marginBottom: '20px' }}
+              modules={modules}
+              // style={{ height: '200px', marginBottom: '20px' }}
             />
           </Form.Group>
 
           {/* Genre Input */}
           <Form.Group className="mb-3">
-            <Form.Label className="p-1">Genres</Form.Label>
+            <Form.Label className="p-4">Genres</Form.Label>
             <div className="d-flex">
               <Form.Control
                 type="text"

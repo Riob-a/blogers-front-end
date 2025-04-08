@@ -3,7 +3,7 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Card, Alert, Spinner, Badge, Dropdown, Button } from "react-bootstrap";
-import { FaThumbsUp, FaThumbsDown } from "react-icons/fa"; 
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import './page.css';
@@ -100,28 +100,30 @@ function Blogs() {
 
   return (
     <Container className="justify-content-center mb-5 blog-page">
-      <Row className=" " data-aos="fade-up" data-aos-duration="800">
-        <h1 className="mb-2 mt-5 unbounded-uniquifier-header wow fadeInLeft">
+      <Row className="header " data-aos="fade-up" data-aos-duration="800">
+        <h1 className="mb-2 mt-5 unbounded-uniquifier-header">
           Blog Posts
         </h1>
         <hr />
       </Row>
 
       {/* Genre Filter Dropdown */}
-      <Row className="mb-4 p-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <Dropdown>
-          <Dropdown.Toggle variant="" id="dropdown-basic">
-            {selectedGenre}
-          </Dropdown.Toggle>
-          <Dropdown.Menu className="drop-menu">
-            {allGenres.map((genre, index) => (
-              <Dropdown.Item key={index} onClick={() => setSelectedGenre(genre)} className="drop-item">
-                {genre}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
-      </Row>
+      <div className="above ">
+        <Row className="mb-4 p-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <Dropdown>
+            <Dropdown.Toggle variant="" id="dropdown-basic">
+              <b>Genre:</b> {selectedGenre}
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="drop-menu">
+              {allGenres.map((genre, index) => (
+                <Dropdown.Item key={index} onClick={() => setSelectedGenre(genre)} className="drop-item">
+                  {genre}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+        </Row>
+      </div>
 
       {/* Filtered Blog Posts */}
       <Row>
@@ -131,7 +133,7 @@ function Blogs() {
           </Alert>
         ) : (
           filteredPosts.map((post) => (
-            <Card className="my-3 wow fadeInUp shadow-sm blog-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" key={post.id}>
+            <Card className="my-3 blog-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" key={post.id}>
               <Card.Body>
                 <Card.Title className="unbounded-uniquifier-header">
                   {post.title}
@@ -162,12 +164,12 @@ function Blogs() {
 
                 {/* Like/Unlike Buttons */}
                 <div className="d-flex align-items-center mt-3">
-                  <Button  className=" small me-2  like-button" onClick={() => handleLike(post.id)}>
-                  <FaThumbsUp className="me-1" />
+                  <Button className=" small me-2  like-button" onClick={() => handleLike(post.id)}>
+                    <FaThumbsUp className="me-1" />
                   </Button>
-                  <Button   className="small like-button" onClick={() => handleUnlike(post.id)}>
-                  <FaThumbsDown className="me-1 " /> 
-                  </Button> 
+                  <Button className="small like-button" onClick={() => handleUnlike(post.id)}>
+                    <FaThumbsDown className="me-1 " />
+                  </Button>
                   <span className="ms-2 small">Likes: {post.like_count}</span>
                 </div>
               </Card.Body>
@@ -175,6 +177,7 @@ function Blogs() {
           ))
         )}
       </Row>
+
     </Container>
   );
 }
