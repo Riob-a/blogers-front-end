@@ -46,11 +46,17 @@ function Blogs() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
+      // setPosts((prevPosts) =>
+      //   prevPosts.map((post) =>
+      //     post.id === postId ? { ...post, like_count: response.data.like_count } : post
+      //   )
+      // );
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
-          post.id === postId ? { ...post, like_count: response.data.like_count } : post
+          post.id === postId ? { ...post, ...response.data } : post
         )
       );
+
     } catch (error) {
       alert(error.response?.data.message || "Error liking post");
     }
@@ -68,15 +74,83 @@ function Blogs() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
+      // setPosts((prevPosts) =>
+      //   prevPosts.map((post) =>
+      //     post.id === postId ? { ...post, like_count: response.data.like_count } : post
+      //   )
+      // );
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
-          post.id === postId ? { ...post, like_count: response.data.like_count } : post
+          post.id === postId ? { ...post, ...response.data } : post
         )
       );
+
     } catch (error) {
       alert(error.response?.data.message || "Error unliking post");
     }
   };
+
+  const handleDislike = async (postId) => {
+    if (!token) {
+      alert("You need to log in to dislike a post.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/api/posts/${postId}/dislike`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // setPosts((prevPosts) =>
+      //   prevPosts.map((post) =>
+      //     post.id === postId
+      //       ? { ...post, dislike_count: response.data.dislike_count, like_count: response.data.like_count }
+      //       : post
+      //   )
+      // );
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId ? { ...post, ...response.data } : post
+        )
+      );
+
+    } catch (error) {
+      alert(error.response?.data.message || "Error disliking post");
+    }
+  };
+
+  const handleUndislike = async (postId) => {
+    if (!token) {
+      alert("You need to log in to remove your dislike.");
+      return;
+    }
+
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/api/posts/${postId}/undislike`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // setPosts((prevPosts) =>
+      //   prevPosts.map((post) =>
+      //     post.id === postId
+      //       ? { ...post, dislike_count: response.data.dislike_count }
+      //       : post
+      //   )
+      // );
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId ? { ...post, ...response.data } : post
+        )
+      );
+
+    } catch (error) {
+      alert(error.response?.data.message || "Error removing dislike");
+    }
+  };
+
 
   const allGenres = ["All", ...new Set(posts.flatMap((post) => post.genres || []))];
 
@@ -158,20 +232,36 @@ function Blogs() {
                     : DOMPurify.sanitize(post.content)
                 }} />
 
-                <Button className="all-button" onClick={() => navigate(`/post/${post.id}`)}>
-                  Read More
-                </Button>
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                  {/* Read More Button */}
+                  <Button className="all-button" onClick={() => navigate(`/post/${post.id}`)}>
+                    Read More
+                  </Button>
 
-                {/* Like/Unlike Buttons */}
-                <div className="d-flex align-items-center mt-3">
-                  <Button className=" small me-2  like-button" onClick={() => handleLike(post.id)}>
-                    <FaThumbsUp className="me-1" />
-                  </Button>
-                  <Button className="small like-button" onClick={() => handleUnlike(post.id)}>
-                    <FaThumbsDown className="me-1 " />
-                  </Button>
-                  <span className="ms-2 small">Likes: {post.like_count}</span>
+                  {/* Reactions */}
+                  <div className="d-flex align-items-center ms-auto">
+                    <Button
+                      className={`small me-2 like-button ${post.isLiked ? "btn-success" : ""}`}
+                      onClick={() => post.isLiked ? handleUnlike(post.id) : handleLike(post.id)}
+                    >
+                      <FaThumbsUp className="me-1" />
+                    </Button>
+                    <span className="me-3">{post.like_count}</span>
+
+                    <Button
+                      className={`small me-2 like-button ${post.isDisliked ? "btn-danger" : ""}`}
+                      onClick={() => post.isDisliked ? handleUndislike(post.id) : handleDislike(post.id)}
+                    >
+                      <FaThumbsDown className="me-1" />
+                    </Button>
+                    <span className="me-3">{post.dislike_count}</span>
+
+                    {token && post.isLiked && (
+                      <span className="text-success">You liked this</span>
+                    )}
+                  </div>
                 </div>
+
               </Card.Body>
             </Card>
           ))

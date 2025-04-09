@@ -52,8 +52,8 @@ const Home = () => {
           <Col xs={12} md={6} className="d-flex flex-column gap-3">
             <Card className="h-100" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               <Card.Body>
-                <Card.Title>Create a Post</Card.Title>
-                <Card.Text>Share your thoughts with the world.</Card.Text>
+                <Card.Title>Dash Board</Card.Title>
+                <Card.Text>Share your thoughts with the world</Card.Text>
                 <Button className="all-button" onClick={() => navigate("/dashboard")}>
                   Get Started
                 </Button>
