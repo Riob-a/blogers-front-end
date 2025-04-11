@@ -30,7 +30,7 @@ const Dashboard = () => {
             <Card.Body>
               <Card.Title>View Profile</Card.Title>
               <Card.Text>Click the button to view and edit your profile</Card.Text>
-              <Button className="all-button" onClick={() => navigate("/profile")}>
+              <Button variant="" className="all-button" onClick={() => navigate("/profile")}>
                 Edit Profile
               </Button>
             </Card.Body>
@@ -43,7 +43,7 @@ const Dashboard = () => {
             <Card.Body>
               <Card.Title>Create a Blog Post</Card.Title>
               <Card.Text>Write and share your thoughts.</Card.Text>
-              <Button className="all-button" onClick={() => navigate("/create-post")}>
+              <Button variant="" className="all-button" onClick={() => navigate("/create-post")}>
                 New Post
               </Button>
             </Card.Body>
@@ -57,7 +57,7 @@ const Dashboard = () => {
             <Card.Body>
               <Card.Title>Recent Posts</Card.Title>
               <Card.Text>Manage your latest blog posts.</Card.Text>
-              <Button className="all-button" onClick={() => navigate("/my-posts")}>
+              <Button variant="" className="all-button" onClick={() => navigate("/my-posts")}>
                 View Posts
               </Button>
             </Card.Body></Card></Col>

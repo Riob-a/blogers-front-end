@@ -234,7 +234,7 @@ function Blogs() {
 
                 <div className="d-flex justify-content-between align-items-center mt-3">
                   {/* Read More Button */}
-                  <Button className="all-button" onClick={() => navigate(`/post/${post.id}`)}>
+                  <Button variant="" className="all-button" onClick={() => navigate(`/post/${post.id}`)}>
                     Read More
                   </Button>
 

@@ -41,7 +41,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>Latest Post</Card.Title>
                 <Card.Text>Explore new insights and stories.</Card.Text>
-                <Button className="all-button" onClick={() => navigate("/blogs")}>
+                <Button variant="" className="all-button" onClick={() => navigate("/blogs")}>
                   Read More
                 </Button>
               </Card.Body>
@@ -54,17 +54,17 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>Dash Board</Card.Title>
                 <Card.Text>Share your thoughts with the world</Card.Text>
-                <Button className="all-button" onClick={() => navigate("/dashboard")}>
+                <Button variant="" className="all-button" onClick={() => navigate("/dashboard")}>
                   Get Started
                 </Button>
               </Card.Body>
             </Card>
 
-            <Card className="h-100" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+            <Card className="h-100" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
               <Card.Body>
                 <Card.Title>Join Us</Card.Title>
                 <Card.Text>Register now and start blogging.</Card.Text>
-                <Button className="all-button" onClick={() => navigate("/register")}>
+                <Button variant="" className="all-button" onClick={() => navigate("/register")}>
                   Sign Up
                 </Button>
               </Card.Body>
@@ -72,8 +72,8 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className="mb-5">
-          <Col xs={12} className=" mt-5" data-aos="fade-up" data-aos-duration="800">
+        <Row className="mb-5 ">
+          <Col xs={12} className=" mt-5" data-aos="fade-right" data-aos-duration="800">
             <Card className={`about-card ${isExpanded ? "expanded" : "collapsed"}`}>
               <Button
                 variant=""
@@ -95,15 +95,15 @@ const Home = () => {
                   write blogs on various topics.
                 </Card.Text>
                 <br />
-                <Button href="/about" id="disappear" className="all-button mb-5">
+                <Button variant="" href="/about" id="disappear" className="all-button mb-5">
                   Learn More
                 </Button>
               </Card.Body>
             </Card>
             
           </Col>
-          
         </Row>
+        
       </Container>
     </div>
   );
