@@ -52,7 +52,7 @@ const MyPosts = () => {
             const response = await axios.delete(`http://127.0.0.1:5000/api/posts/${postId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
-    
+
             if (response.status === 200) {
                 // Successfully deleted, update state
                 setPosts((prevPosts) => prevPosts.filter(post => post.id !== postId));
@@ -79,19 +79,27 @@ const MyPosts = () => {
                             <h5>{post.title}</h5>
                             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content).substring(0, 150) + "..." }} />
                             <Card.Footer>
-                            <Button
-                                onClick={() => navigate(`/post/${post.id}`)}
-                                className="small me-2   mb-4 m-2 all-button"
-                            >
-                                Read More
-                            </Button>
-                            <Button
-                                className="me-2 small  mb-4 m-2 all-button"
-                                // size="sm"
-                                onClick={() => handleDelete(post.id)}
-                            >
-                                Delete
-                            </Button>
+                                <Button
+                                    onClick={() => navigate(`/post/${post.id}`)}
+                                    variant=""
+                                    className="small me-2   mb-4 m-2 all-button"
+                                >
+                                    Read More
+                                </Button>
+                                <Button
+                                    className="me-2 small mb-4 m-2 all-button"
+                                    variant=""
+                                    onClick={() => navigate(`/edit-post/${post.id}`)}
+                                >
+                                    Edit
+                                </Button>
+                                <Button
+                                    className="me-2 small  mb-4 m-2 all-button"
+                                    variant=""
+                                    onClick={() => handleDelete(post.id)}
+                                >
+                                    Delete
+                                </Button>
                             </Card.Footer>
                         </div>
                     ))

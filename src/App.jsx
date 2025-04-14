@@ -13,6 +13,7 @@ import './App.css'
 import RetroHeader from './pages/RetroHeader'
 import BlogDetail from './pages/BlogDetail'
 import MyPosts from './pages/MyPosts';
+import EditPost from './pages/EditPost';
 import Footer from './components/Footer';
 import About from './pages/About';
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/retro' element={<RetroHeader />} />
           <Route path='/my-posts' element={<MyPosts />} />
+          <Route path ="/edit-post/:id" element={<EditPost />} />
         </Routes>
       </div>
       <ToastContainer />
