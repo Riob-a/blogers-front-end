@@ -18,7 +18,7 @@ function Blogs() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/posts")
+      .get("https://blogers-backend.onrender.com/api/posts")
       .then((response) => {
         setPosts(response.data);
         setLoading(false);
@@ -41,7 +41,7 @@ function Blogs() {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/posts/${postId}/like`,
+        `https://blogers-backend.onrender.com/api/posts/${postId}/like`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -70,7 +70,7 @@ function Blogs() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/posts/${postId}/unlike`,
+        `https://blogers-backend.onrender.com/api/posts/${postId}/unlike`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -98,7 +98,7 @@ function Blogs() {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/posts/${postId}/dislike`,
+        `https://blogers-backend.onrender.com/api/posts/${postId}/dislike`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -129,7 +129,7 @@ function Blogs() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/posts/${postId}/undislike`,
+        `https://blogers-backend.onrender.com/api/posts/${postId}/undislike`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

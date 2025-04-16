@@ -41,7 +41,7 @@ const Profile = () => {
 
             try {
                 // Fetch user profile
-                const profileResponse = await axios.get("http://127.0.0.1:5000/api/profile", {
+                const profileResponse = await axios.get("https://blogers-backend.onrender.com/api/profile", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -50,7 +50,7 @@ const Profile = () => {
                 setEmail(profileResponse.data.email);
 
                 // Fetch user's blog posts
-                const postsResponse = await axios.get("http://127.0.0.1:5000/api/user/posts", {
+                const postsResponse = await axios.get("https://blogers-backend.onrender.com/api/user/posts", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -96,7 +96,7 @@ const Profile = () => {
 
         try {
             const response = await axios.patch(
-                "http://127.0.0.1:5000/api/profile/update",
+                "https://blogers-backend.onrender.com/api/profile/update",
                 formData,
                 {
                     headers: {

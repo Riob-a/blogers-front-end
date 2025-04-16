@@ -22,7 +22,7 @@ const MyPosts = () => {
             }
 
             try {
-                const response = await axios.get("http://127.0.0.1:5000/api/user/posts", {
+                const response = await axios.get("https://blogers-backend.onrender.com/api/user/posts", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setPosts(response.data);
@@ -49,7 +49,7 @@ const MyPosts = () => {
             return;
         }
         try {
-            const response = await axios.delete(`http://127.0.0.1:5000/api/posts/${postId}`, {
+            const response = await axios.delete(`https://blogers-backend.onrender.com/api/posts/${postId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

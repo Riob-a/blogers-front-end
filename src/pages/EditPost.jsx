@@ -45,7 +45,7 @@ const EditPost = () => {
         const fetchPost = async () => {
             try {
                 const token = localStorage.getItem("access_token");
-                const res = await axios.get(`http://127.0.0.1:5000/api/posts/${id}`, {
+                const res = await axios.get(`https://blogers-backend.onrender.com/api/posts/${id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setTitle(res.data.title);
@@ -64,7 +64,7 @@ const EditPost = () => {
         const token = localStorage.getItem("access_token");
 
         try {
-            await axios.put(`http://127.0.0.1:5000/api/posts/${id}`, {
+            await axios.put(`https://blogers-backend.onrender.com/api/posts/${id}`, {
                 title,
                 content,
             }, {

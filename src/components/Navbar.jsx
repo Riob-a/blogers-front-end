@@ -17,7 +17,7 @@ function BasicExample() {
         const token = localStorage.getItem("access_token");
         if (!token) return;
 
-        const response = await axios.get("http://127.0.0.1:5000/api/profile", {
+        const response = await axios.get("https://blogers-backend.onrender.com/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

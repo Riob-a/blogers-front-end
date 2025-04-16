@@ -33,7 +33,7 @@ function BlogDetail() {
     const token = localStorage.getItem("access_token");
     if (token) {
       axios
-        .get("http://localhost:5000/api/auth/me", {
+        .get("https://blogers-backend.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUserId(res.data.id))
@@ -46,13 +46,13 @@ function BlogDetail() {
 
   const fetchComments = () => {
     axios
-      .get(`http://localhost:5000/api/comments?post_id=${id}`)
+      .get(`https://blogers-backend.onrender.com/api/comments?post_id=${id}`)
       .then(async (response) => {
         const commentsData = response.data;
 
         // Fetch user details for each comment
         const usersPromises = commentsData.map((comment) =>
-          axios.get(`http://localhost:5000/api/users/${comment.user_id}`).catch(() => null)
+          axios.get(`https://blogers-backend.onrender.com/api/users/${comment.user_id}`).catch(() => null)
         );
 
         const usersResponses = await Promise.all(usersPromises);
@@ -70,10 +70,10 @@ function BlogDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/posts/${id}`)
+      .get(`https://blogers-backend.onrender.com/api/posts/${id}`)
       .then((response) => {
         setPost(response.data);
-        return axios.get(`http://localhost:5000/api/users/${response.data.user_id}`);
+        return axios.get(`https://blogers-backend.onrender.com/api/users/${response.data.user_id}`);
       })
       .then((authorResponse) => {
         setAuthor(authorResponse.data);
@@ -99,7 +99,7 @@ function BlogDetail() {
     setSubmitting(true);
     axios
       .post(
-        "http://localhost:5000/api/comments",
+        "https://blogers-backend.onrender.com/api/comments",
         { content: newComment, post_id: id },
         { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } }
       )
@@ -113,7 +113,7 @@ function BlogDetail() {
 
   const handleDeleteComment = (commentId) => {
     axios
-      .delete(`http://localhost:5000/api/comments/${commentId}`, {
+      .delete(`https://blogers-backend.onrender.com/api/comments/${commentId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` },
       })
       .then(() => {

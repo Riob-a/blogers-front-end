@@ -38,7 +38,7 @@ function Register() {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/register', {
+            const response = await fetch('https://blogers-backend.onrender.com/api/register', {
                 method: 'POST',
                 body: formData,
             });
