@@ -75,6 +75,8 @@ DATABASE_URL=postgresql://user:pass@localhost/dbname
 CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
 SENDGRID_API_KEY=your_sendgrid_key
 
+---
+
 ### Setup
 ## Front end
 Clone the repo
@@ -104,6 +106,8 @@ flask run
 - Backend: Use pytest or unittest.
 - Frontend: Use Jest + React Testing Library.
 
+---
+
 ### Deployment
 Frontend:
 - Vercel
@@ -118,10 +122,13 @@ Database:
 - Supabase
 - ElephantSQL
 
+---
+
 ### License
 This project is licensed under the MIT License.
 See the LICENSE file for more details.
 
+---
 ### Acknowledgements
 - React
 - Flask
