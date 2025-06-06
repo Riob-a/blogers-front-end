@@ -1,4 +1,4 @@
-#  Blogers Web App
+# Blogers Web App
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
@@ -26,21 +26,22 @@ A full-stack blogging platform built with **React** and **Flask**. Users can cre
 
 --- -->
 
-##  Features
+## Features
 
--  **User Authentication** (JWT-based)
--  **Create, Edit, and Delete Posts**
--  **Like and Dislike Posts**
--  **Comment on Posts**
--  **Filter by Genre or Author**
--  **User Profiles**
--  **Role-based Access Control (Admin/User)**
+- **User Authentication** (JWT-based)
+- **Create, Edit, and Delete Posts**
+- **Like and Dislike Posts**
+- **Comment on Posts**
+- **Filter by Genre or Author**
+- **User Profiles**
+- **Role-based Access Control (Admin/User)**
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 ### Frontend
+
 - [React.js](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
@@ -48,6 +49,7 @@ A full-stack blogging platform built with **React** and **Flask**. Users can cre
 - [Bootstrap](https://getbootstrap.com/) or [Tailwind CSS](https://tailwindcss.com/)
 
 ### Backend
+
 - [Flask](https://flask.palletsprojects.com/)
 - [Flask-JWT-Extended](https://flask-jwt-extended.readthedocs.io/)
 - [Flask SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/)
@@ -55,19 +57,22 @@ A full-stack blogging platform built with **React** and **Flask**. Users can cre
 - [Flask-CORS](https://flask-cors.readthedocs.io/)
 
 ### Database
+
 - PostgreSQL or SQLite (for local dev)
 
 ### Optional Integrations
+
 - [Cloudinary](https://cloudinary.com/) – Image uploads
 - [SendGrid](https://sendgrid.com/) – Email services
 
 ---
 
-##  Environment Variables
+## Environment Variables
 
 Create a `.env` file in both `frontend/` and `backend/` directories:
 
 ### Backend (`backend/.env`)
+
 ```env
 SECRET_KEY=your_secret_key
 JWT_SECRET_KEY=your_jwt_key
@@ -75,21 +80,26 @@ DATABASE_URL=postgresql://user:pass@localhost/dbname
 CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
 SENDGRID_API_KEY=your_sendgrid_key
 
----
+```
 
 ### Setup
+
 ## Front end
+
 Clone the repo
+
  ```bash
+
 git clone https://github.com/your-username/blogers-web-app.git
 cd blogers-web-app
 
 cd frontend
 npm install
 npm start
+```
 
+## Backend-setup
 
-## Backend
 ```bash
 cd backend
 python -m venv venv
@@ -98,38 +108,52 @@ pip install -r requirements.txt
 flask db upgrade
 flask run
 
+```
+
 ### Testing
+
 ## Manual
+
 - Use Postman or Thunder Client to test backend endpoints.
+
 - Access full functionality via the frontend UI.
+
 ## Automated
+
 - Backend: Use pytest or unittest.
 - Frontend: Use Jest + React Testing Library.
 
 ---
 
 ### Deployment
+
 Frontend:
+
 - Vercel
 - Netlify
 
 Backend:
+
 - Render
 - Railway
 - Heroku
 
 Database:
+
 - Supabase
 - ElephantSQL
 
 ---
 
 ### License
+
 This project is licensed under the MIT License.
 See the LICENSE file for more details.
 
 ---
+
 ### Acknowledgements
+
 - React
 - Flask
 - PostgreSQL
